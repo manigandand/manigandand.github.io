@@ -242,3 +242,15 @@ html[data-lang="ta"] body { font-family: "Noto Sans Tamil", var(--sans); }
   .hero > *, .story > * { animation: none; }
   .steps::after, .timeline::after { transition: none; }
 }
+
+/* ---- mild diamond lattice background (fixed, doesn't scroll) ---- */
+:root {
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='134' height='134'%3E%3Cpath d='M67 6 128 67 67 128 6 67Z' fill='none' stroke='%23356a80' stroke-opacity='.09'/%3E%3C/svg%3E");
+}
+:root[data-theme="dark"] {
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='134' height='134'%3E%3Cpath d='M67 6 128 67 67 128 6 67Z' fill='none' stroke='%236fb3cf' stroke-opacity='.045'/%3E%3C/svg%3E");
+}
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image: var(--pattern);
+}

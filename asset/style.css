@@ -147,7 +147,7 @@ html[data-lang="ta"] body { font-family: "Noto Sans Tamil", var(--sans); }
 .steps { list-style: none; margin: 40px 0 0; padding: 0 0 0 0; border-left: 2px solid var(--border); }
 .steps > li { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 0 0 32px 24px; position: relative; }
 .steps > li::before {
-  content: ""; position: absolute; left: -7px; top: 8px; width: 12px; height: 12px;
+  content: ""; position: absolute; left: -9px; top: 0px; width: 12px; height: 12px;
   border-radius: 50%; background: var(--accent); border: 2px solid var(--bg);
 }
 .steps h2 { font-size: 1.15rem; margin: 0 0 6px; }
@@ -207,3 +207,38 @@ html[data-lang="ta"] body { font-family: "Noto Sans Tamil", var(--sans); }
 /* keep header stable when switching language */
 .nav, .nav nav { font-family: var(--sans); }
 .pill { min-width: 84px; text-align: center; font-family: var(--sans); }
+
+/* ---- scroll animations ---- */
+.steps, .timeline { position: relative; --p: 0; }
+.steps::after, .timeline::after {
+  content: ""; position: absolute; left: -2px; top: 0; width: 2px;
+  height: calc(var(--p) * 100%); background: var(--accent); border-radius: 2px;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.js .steps > li, .js .timeline > li, .js .card, .js .family, .js .note,
+.js .about-grid > *, .js section.wrap > h2 {
+  opacity: 0; transform: translateY(26px);
+  transition: opacity .6s ease, transform .6s cubic-bezier(.2, .7, .2, 1);
+}
+.js .steps > li.in, .js .timeline > li.in, .js .card.in, .js .family.in, .js .note.in,
+.js .about-grid > .in, .js section.wrap > h2.in { opacity: 1; transform: none; }
+.js .card.in { transition: transform .15s, border-color .15s, opacity .6s ease; }
+.js .card.in:hover { transform: translateY(-3px); }
+
+/* timeline dots pop in */
+.js .steps > li::before, .js .timeline > li::before { transform: scale(0); transition: transform .5s cubic-bezier(.3, 1.6, .5, 1) .15s; }
+.js .steps > li.in::before, .js .timeline > li.in::before { transform: scale(1); }
+
+/* hero entrance */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.hero > *, .story > .banner, .story > .eyebrow, .story > h1, .story > div[lang] { animation: fadeUp .8s cubic-bezier(.2, .7, .2, 1) both; }
+.hero > :nth-child(2) { animation-delay: .08s; } .hero > :nth-child(3) { animation-delay: .16s; }
+.hero > :nth-child(4) { animation-delay: .24s; } .hero > :nth-child(5) { animation-delay: .32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .steps > li, .js .timeline > li, .js .card, .js .family, .js .note,
+  .js .about-grid > *, .js section.wrap > h2 { opacity: 1; transform: none; }
+  .js .steps > li::before, .js .timeline > li::before { transform: none; }
+  .hero > *, .story > * { animation: none; }
+  .steps::after, .timeline::after { transition: none; }
+}

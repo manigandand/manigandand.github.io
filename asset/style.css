@@ -309,3 +309,6 @@ body::before {
   .nav nav .links a { padding: 13px 4px; font-size: 1rem; color: var(--text); border-bottom: 1px solid var(--border); }
   .nav nav .links a:last-child { border-bottom: 0; }
 }
+
+/* footer keeps its own font in both languages */
+.foot, .foot a { font-family: var(--sans); }

@@ -131,3 +131,79 @@ h3 { margin: 0 0 6px; font-size: 1.05rem; }
 .timeline ul li { display: list-item; padding: 0 0 4px; grid-template-columns: none; position: static; }
 .timeline ul li::before { content: none; }
 .chips + .small { margin-top: 20px; }
+
+/* about / story page + language toggle */
+html[data-lang="en"] [lang="ta"],
+html[data-lang="ta"] [lang="en"] { display: none; }
+html[data-lang="ta"] body { font-family: "Noto Sans Tamil", var(--sans); }
+.pill {
+  background: none; border: 1px solid var(--border); color: var(--text);
+  border-radius: 999px; padding: 4px 12px; cursor: pointer; font: 500 .85rem var(--sans);
+}
+.pill:hover { border-color: var(--accent); }
+.nav nav a[aria-current="page"] { color: var(--text); }
+.story { padding-top: 90px; padding-bottom: 60px; }
+.story h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); }
+.steps { list-style: none; margin: 40px 0 0; padding: 0 0 0 0; border-left: 2px solid var(--border); }
+.steps > li { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 0 0 32px 24px; position: relative; }
+.steps > li::before {
+  content: ""; position: absolute; left: -7px; top: 8px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--accent); border: 2px solid var(--bg);
+}
+.steps h2 { font-size: 1.15rem; margin: 0 0 6px; }
+.steps p { margin: 0; color: var(--muted); }
+@media (max-width: 680px) {
+  .nav nav a { display: none; }
+  .nav nav .pill { display: inline-block; }
+  .steps > li { grid-template-columns: 1fr; gap: 0; }
+}
+
+.family { margin-top: 32px; padding: 20px 24px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; }
+.family h2 { font-size: 1.15rem; margin: 0 0 8px; }
+.family p { margin: 0; color: var(--muted); }
+.steps figure { margin: 16px 0 0; }
+.steps img { width: 100%; max-width: 520px; border-radius: 10px; border: 1px solid var(--border); display: block; }
+.steps figcaption { font-size: .82rem; color: var(--muted); margin-top: 6px; }
+.note {
+  position: relative; margin: 48px 0 0; padding: 44px 36px 28px;
+  background: linear-gradient(135deg, var(--bg-alt), color-mix(in srgb, var(--accent) 10%, var(--bg-alt)));
+  border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 14px;
+}
+.note::before {
+  content: "\201C"; position: absolute; top: -6px; left: 22px;
+  font: 700 5.5rem/1 Georgia, "Times New Roman", serif; color: var(--accent); opacity: .35;
+}
+.note p { margin: 0; font-size: 1.2rem; line-height: 1.7; font-style: italic; color: var(--text); }
+.note cite { display: block; margin-top: 18px; font: 500 .9rem var(--mono); font-style: normal; color: var(--accent); }
+.note cite::before { content: "\2014\00a0"; }
+
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; max-width: 640px; }
+.gallery figure { margin: 0; }
+.gallery img { max-width: none; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.steps .cap { font-size: .82rem; margin-top: 6px; }
+.steps figure.tall img { max-width: 340px; }
+@media (max-width: 680px) { .gallery { grid-template-columns: 1fr; } }
+
+/* company logos in timeline */
+.role-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.role-head h3 { margin: 0; }
+.co-logo {
+  height: 44px; width: auto; max-width: 96px; flex: none; object-fit: contain;
+  background: #fff; border: 1px solid var(--border); border-radius: 8px;
+}
+
+.gallery.g3 img { aspect-ratio: 3 / 4; object-position: center 25%; }
+.gallery.g3 figure:nth-child(3) { grid-column: 1 / -1; }
+.gallery.g3 figure:nth-child(3) img { aspect-ratio: 4 / 3; object-position: center; }
+
+.video { position: relative; aspect-ratio: 16 / 9; max-width: 640px; margin-top: 16px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--bg-alt); }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* banner */
+.banner { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border); margin-bottom: 36px; }
+.hero { padding-top: 40px; }
+.story { padding-top: 40px; }
+
+/* keep header stable when switching language */
+.nav, .nav nav { font-family: var(--sans); }
+.pill { min-width: 84px; text-align: center; font-family: var(--sans); }

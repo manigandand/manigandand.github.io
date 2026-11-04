@@ -4,66 +4,236 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Manigandan Dharmalingam</title>
+  <meta name="description" content="Manigandan Dharmalingam — Senior Software Engineer at Kong. Gopher building resilient distributed systems. Based in Bangalore.">
+  <meta property="og:title" content="Manigandan Dharmalingam">
+  <meta property="og:description" content="Senior Software Engineer @Kong. Gopher, distributed systems, traveller.">
+  <meta property="og:url" content="https://manigandand.com">
+  <meta name="theme-color" content="#356a80">
   <link rel="icon" type="image/png" sizes="192x192" href="asset/fav/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="asset/fav/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="asset/fav/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="asset/fav/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="asset/fav/apple-icon-180x180.png">
   <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#356a80">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500|Work+Sans">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script src="https://use.fontawesome.com/9455e37886.js"></script>
-  <style>
-    body {
-      font-family: Open Sans, sans-serif;
-      color: #666;
-    }
-    .bg {
-      /* background-image: url(asset/go-git.jpg); */
-      background: #356a80;
-      height: 100%; 
-      background-repeat: no-repeat;
-      background-size: cover;
-      /* background-position: center; */
-    }
-    h1, h2 {
-      font-family: Work Sans, sans-serif;
-    }
-    .h-title{
-      font-size: 6em;
-      font-weight: 700;
-    }
-    .intro-card {
-      color:#f8f9fa;
-      margin: 20% 0%;
-      text-align: center;
-    }
-    .intro-card h5 {
-      font-size: 1.5em;
-      font-weight: lighter;     
-    }
-
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="asset/style.css">
+  <script>
+    // set theme before paint to avoid flash
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
 </head>
-<body class="bg">
-  <div class="container">
-    <div class="intro-card">
-      <h1 class="h-title">Hi, I'm Manigandan.</h1>
-      <h5>
-        Gopher <i class="fa fa-heartbeat" aria-hidden="true" style="font-size: 20px;"></i> 
-        Fullstack Developer <i class="fa fa-heartbeat" aria-hidden="true" style="font-size: 20px;"></i>
-        Traveller
-      </h5>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="logo">md<span>.</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#writing">Writing</a>
+        <a href="#life">Beyond code</a>
+        <button id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">◐</button>
+      </nav>
     </div>
-    <div style=" color: #fffefe; text-align: center; font-size: 12px;">
-      <i>** Just bought my domain.. Will update soon. Thanks</i>
-    </div>
-  </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="eyebrow mono">Bangalore, India</p>
+      <h1>Hi, I'm Manigandan.</h1>
+      <p class="lead">Founding backend engineer with 11+ years building B2B and B2C products from 0 to 1. Senior Software Engineer at <a href="https://konghq.com" rel="noopener">Kong</a>, building agentic AI and platform services. Gopher by trade, traveller by heart.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See my work</a>
+        <a class="btn" href="asset/Manigandan-Dharmalingam-Resume.pdf" download>Resume (PDF)</a>
+        <a class="btn" href="https://github.com/manigandand" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/manigandand/" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <section id="about" class="wrap">
+      <h2><span class="mono">01.</span> About</h2>
+      <div class="about-grid">
+        <div>
+          <p>I design and build robust, scalable backend services and APIs, mostly in Go and Node.js. Over 11+ years I've worked closely with the CEO and CTO at three early-stage startups, building products from scratch and getting involved in every part of product development.</p>
+          <p>Lately I build agentic AI systems: LLM agents that use MCP servers to help people debug and configure their infrastructure.</p>
+          <p class="muted">B.E. Computer Science, Anna University (2010–2014).</p>
+        </div>
+        <div>
+          <h3 class="mono small">Languages</h3>
+          <ul class="chips"><li>Go</li><li>Node.js</li><li>Python</li><li>JavaScript</li><li>Serverless</li></ul>
+          <h3 class="mono small">Agentic AI</h3>
+          <ul class="chips"><li>LangChain</li><li>LangGraph</li><li>AWS Bedrock</li><li>MCP</li><li>CodeMode</li></ul>
+          <h3 class="mono small">Data</h3>
+          <ul class="chips"><li>PostgreSQL</li><li>MongoDB</li><li>MySQL</li><li>Redis</li><li>Elasticsearch</li><li>OpenSearch</li><li>InfluxDB</li><li>DynamoDB</li><li>Firebase</li></ul>
+          <h3 class="mono small">Messaging &amp; APIs</h3>
+          <ul class="chips"><li>REST</li><li>gRPC</li><li>Kafka</li><li>NATS</li><li>NSQ</li><li>Debezium</li></ul>
+          <h3 class="mono small">DevOps</h3>
+          <ul class="chips"><li>AWS</li><li>GCP</li><li>Kubernetes</li><li>Nomad</li><li>Docker</li><li>CircleCI</li><li>Linux</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="wrap">
+      <h2><span class="mono">02.</span> Projects</h2>
+      <div class="cards">
+        <a class="card" href="https://github.com/manigandand/rbix" rel="noopener">
+          <h3>rbix</h3>
+          <p>Container isolation with a WebSocket reverse proxy for remote browser isolation.</p>
+          <span class="meta mono">Go · ★ 14</span>
+        </a>
+        <a class="card" href="https://github.com/manigandand/adk" rel="noopener">
+          <h3>adk</h3>
+          <p>Golang API Development Kit: building blocks for writing HTTP APIs quickly.</p>
+          <span class="meta mono">Go · ★ 15</span>
+        </a>
+        <a class="card" href="https://github.com/manigandand/angago" rel="noopener">
+          <h3>angago</h3>
+          <p>"Anga po" (அங்க போ), meaning "go there". Localhost proxy tunnel written in Go.</p>
+          <span class="meta mono">Go · ★ 18</span>
+        </a>
+        <a class="card" href="https://github.com/manigandand/kv_repl" rel="noopener">
+          <h3>kv_repl</h3>
+          <p>Key-value store REPL with nested transactions.</p>
+          <span class="meta mono">Go</span>
+        </a>
+        <a class="card" href="https://github.com/manigandand/nats-demo" rel="noopener">
+          <h3>nats-demo</h3>
+          <p>NATS JetStream pub/sub examples.</p>
+          <span class="meta mono">Go</span>
+        </a>
+        <a class="card" href="https://github.com/manigandand/weather-fx" rel="noopener">
+          <h3>weather-fx</h3>
+          <p>Go server wired with uber/fx dependency injection.</p>
+          <span class="meta mono">Go</span>
+        </a>
+        <a class="card" href="https://github.com/manigandand/log" rel="noopener">
+          <h3>log</h3>
+          <p>Yet another Go logger.</p>
+          <span class="meta mono">Go · ★ 6</span>
+        </a>
+        <a class="card" href="https://github.com/manigandand/devops" rel="noopener">
+          <h3>devops</h3>
+          <p>Automated deploys using Fabric and supervisord.</p>
+          <span class="meta mono">Shell</span>
+        </a>
+      </div>
+      <p class="more"><a href="https://github.com/manigandand?tab=repositories" rel="noopener">All repositories →</a></p>
+    </section>
+
+    <section id="experience" class="wrap">
+      <h2><span class="mono">03.</span> Experience</h2>
+      <ol class="timeline">
+        <li>
+          <div class="when mono">Aug 2024 – Present</div>
+          <div>
+            <h3>Senior Software Engineer 3 · Kong</h3>
+            <ul>
+              <li>Events Platform team, building platform services behind Kong Konnect SaaS.</li>
+              <li>Built NotificationHub from 0 to 1, powering centralized email and in-app notifications in Konnect.</li>
+              <li>Built KAi, the Kong AI Assistant, from 0 to 1 using LangChain-Go, AWS Bedrock and MCP servers. Rewrote it as a v2 multi-agent system with LangGraph, FastAPI, MCP and CodeMode to help users debug and configure Konnect and gateway issues.</li>
+              <li>Improved Ksearch API performance.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when mono">Feb 2024 – Aug 2024</div>
+          <div>
+            <h3>Lead Software Engineer · Gojek</h3>
+            <ul>
+              <li>Data Engineering team, maintaining the firehose and dagger stream-processing services on Apache Flink.</li>
+              <li>Ran 3000+ deployments processing 100M+ messages per minute.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when mono">May 2022 – Sep 2023</div>
+          <div>
+            <h3>Software Engineer · Last9</h3>
+            <ul>
+              <li>SRE reliability platform. Feature development on Compass 2.0.</li>
+              <li>Set up API documentation process, enforced Go linting and coding standards, and introduced better API error and response handling.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when mono">Dec 2018 – Nov 2021</div>
+          <div>
+            <h3>Founding Engineer, Backend Lead · Squadcast</h3>
+            <ul>
+              <li>Incident response platform (acquired by SolarWinds). Architected the system with the CTO.</li>
+              <li>Migrated from a monolith to microservices and moved infra to Kubernetes. Rewrote services in Go and redesigned the product API-first.</li>
+              <li>Scaled to 1M incidents and 3M notifications and events. Led a backend team of 5.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when mono">May 2017 – Dec 2018</div>
+          <div>
+            <h3>Senior Software Engineer · AirCTO</h3>
+            <ul>
+              <li>AI-assisted hiring platform (acquired by Gojek). Worked with the CEO on architecture and new features.</li>
+              <li>Built over 80% of the backend microservices.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when mono">Feb 2016 – Apr 2017</div>
+          <div>
+            <h3>Software Engineer · TVS Infotech &amp; TVS Next</h3>
+            <ul><li>Built Go services for US and Finland-based clients.</li></ul>
+          </div>
+        </li>
+        <li>
+          <div class="when mono">Jul 2014 – Feb 2016</div>
+          <div>
+            <h3>Software Engineer · PParkE</h3>
+            <ul><li>Full-stack developer on an online parking reservation platform with Android and iOS apps, working closely with the CTO in a fast-paced startup.</li></ul>
+          </div>
+        </li>
+      </ol>
+      <p class="more"><a href="asset/Manigandan-Dharmalingam-Resume.pdf" download>Download resume (PDF) ↓</a> · <a href="https://www.linkedin.com/in/manigandand/" rel="noopener">Full history on LinkedIn →</a></p>
+    </section>
+
+    <section id="writing" class="wrap">
+      <h2><span class="mono">04.</span> Writing</h2>
+      <p class="muted">Notes on Go, distributed systems and things I learn along the way. Coming soon.</p>
+      <!-- TODO: add post list, e.g. <a class="post" href="...">Title <span class="mono">date</span></a> -->
+    </section>
+
+    <section id="life" class="wrap">
+      <h2><span class="mono">05.</span> Beyond code</h2>
+      <div class="about-grid">
+        <div>
+          <p>Away from the keyboard I'm a traveller. New places, local food and long roads reset my head better than anything else.</p>
+          <!-- TODO: personal story, hobbies, favourite trips -->
+        </div>
+        <ul class="chips">
+          <li>Travel</li><li>Learning Rust</li><li>Tamil</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap">
+      <h2><span class="mono">06.</span> Say hello</h2>
+      <p>Open to interesting conversations on Go, distributed systems and travel.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://www.linkedin.com/in/manigandand/" rel="noopener">Message on LinkedIn</a>
+        <a class="btn" href="https://github.com/manigandand" rel="noopener">Follow on GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <span>© <span id="year"></span> Manigandan Dharmalingam</span>
+    <span class="mono">Built with plain HTML, CSS &amp; JS</span>
+  </footer>
+
+  <script src="asset/main.js"></script>
 </body>
 </html>
-
-

@@ -279,3 +279,16 @@ body::before {
 }
 .socials.groups .ic:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
 .socials.groups .handle { margin-left: 6px; font-size: .92rem; font-weight: 500; color: var(--text); white-space: nowrap; }
+
+/* pull-quote inside a journey step */
+.steps .pull {
+  position: relative; margin: 16px 0 0; padding: 14px 18px 14px 26px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg-alt));
+  border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0;
+  font-style: italic; color: var(--text); line-height: 1.6;
+}
+.steps .pull::before {
+  content: "\201C"; position: absolute; left: 6px; top: -2px;
+  font: 700 2.2rem/1 Georgia, serif; color: var(--accent); opacity: .5; font-style: normal;
+}
+.steps .pull[lang="ta"] { font-style: normal; font-weight: 500; }

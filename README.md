@@ -32,7 +32,7 @@ Personal portfolio website of **Manigandan Dharmalingam**, a Senior Software Eng
     ├── style.css       # all styles and theme tokens
     ├── main.js         # theme and language toggles, scroll animations
     ├── fav/            # icon.svg (master), Apple and manifest icons
-    └── *.jpg, *.png    # photos, logos, banner, resume PDF
+    └── *.webp, *.png    # photos, logos, banner, share image, resume PDF
 ```
 
 ## Run locally

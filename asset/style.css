@@ -317,3 +317,25 @@ body::before {
 
 /* footer keeps its own font in both languages */
 .foot, .foot a { font-family: var(--sans); }
+
+/* journey intro portrait */
+.me-intro { float: right; width: 120px; height: 120px; margin: 4px 0 12px 20px; }
+@media (max-width: 480px) { .me-intro { width: 88px; height: 88px; margin-left: 14px; } }
+
+/* ---- print ---- */
+@media print {
+  :root, :root[data-theme="dark"], :root[data-theme="light"] {
+    --bg: #fff; --bg-alt: #fff; --text: #111; --muted: #444; --border: #ccc; --accent: #1a4d63; --pattern: none;
+  }
+  body, html { background: #fff !important; color: #111 !important; }
+  body::before, .nav, .menu-btn, #theme-toggle, #lang-toggle, .cta, .foot .socials, .video, .banner { display: none !important; }
+  .js .steps > li, .js .timeline > li, .js .card, .js .family, .js .note, .js .about-grid > *, .js section.wrap > h2,
+  .hero > *, .story > * { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .steps::after, .timeline::after, .steps > li::before, .timeline > li::before { display: none; }
+  .steps > li, .timeline > li, .card, .family, .note, figure, .gallery { break-inside: avoid; }
+  .wrap { max-width: none; padding: 0; }
+  section.wrap, .hero { padding-top: 12px; padding-bottom: 12px; }
+  a { color: inherit; text-decoration: none; }
+  p a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; color: #555; word-break: break-all; }
+  .card, .family, .note { box-shadow: none; }
+}

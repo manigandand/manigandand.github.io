@@ -339,3 +339,7 @@ body::before {
   p a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; color: #555; word-break: break-all; }
   .card, .family, .note { box-shadow: none; }
 }
+
+/* home banner: artwork drawn in the site palette, one per theme */
+.banner-art { border: 0; aspect-ratio: 3 / 1; background: url("banner-light.webp") center / cover no-repeat; }
+:root[data-theme="dark"] .banner-art { background-image: url("banner-dark.webp"); }

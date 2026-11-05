@@ -199,6 +199,11 @@ html[data-lang="ta"] body { font-family: "Noto Sans Tamil", var(--sans); }
 /* banner */
 .banner { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border); margin-bottom: 36px; }
 .hero { padding-top: 40px; }
+.hero-id { display: flex; align-items: center; gap: 24px; margin-bottom: 8px; }
+.hero-id .eyebrow { margin-top: 0; }
+.hero-id h1 { margin-bottom: 0; }
+.me { width: 112px; height: 112px; flex: none; border-radius: 22px; object-fit: cover; object-position: top; border: 2px solid var(--border); box-shadow: 0 6px 20px rgba(0, 0, 0, .18); }
+@media (max-width: 480px) { .hero-id { gap: 16px; } .me { width: 84px; height: 84px; } }
 .story { padding-top: 40px; }
 
 /* keep header stable when switching language */
